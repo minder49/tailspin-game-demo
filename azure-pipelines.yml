@@ -18,7 +18,7 @@ stages:
 
     variables:
       wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-      dotnetSdkVersion: '8.x'
+      dotnetSdkVersion: '6.x'
 
     steps:
     - task: UseDotNet@2
@@ -89,7 +89,7 @@ stages:
               azureSubscription: '5b51fb2c-d8e0-44a5-975d-3879dd490516'
               appType: 'webAppLinux'
               appName: '$(WebAppNameDev)'
-              package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip
+              package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
 
 - stage: 'Staging'
   displayName: 'Deploy to the staging environment'
